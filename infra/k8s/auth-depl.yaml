@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: rarefiction/auth
+          image: us.gcr.io/spheric-crow-380417/auth
 ---
 apiVersion: v1
 kind: Service

@@ -5,10 +5,12 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  local:
-    push: false
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: spheric-crow-380417
   artifacts:
-    - image: rarefiction/auth
+    - image: us.gcr.io/spheric-crow-380417/auth
       context: auth
       docker:
         dockerfile: Dockerfile
