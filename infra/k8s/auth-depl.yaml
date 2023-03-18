@@ -14,7 +14,9 @@ spec:
     spec:
       containers:
         - name: auth
+          # when using google cloud service
           image: us.gcr.io/spheric-crow-380417/auth
+          # image: rarefiction/auth
           env:
             - name: JWT_KEY
               valueFrom:
