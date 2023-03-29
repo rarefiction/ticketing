@@ -14,7 +14,7 @@ interface OrderAttrs {
 interface OrderDoc extends mongoose.Document {
   userId: string;
   status: OrderStatus;
-  expiredAt: Date;
+  expiresAt: Date;
   ticket: TicketDoc;
 }
 
