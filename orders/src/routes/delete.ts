@@ -5,7 +5,7 @@ import {
   requireAuth,
 } from "@raretickets/common";
 import { Order, OrderStatus } from "../models/order";
-import { OrderCancelledPublisher } from "../events/order-cancelled-publisher";
+import { OrderCancelledPublisher } from "../events/publishers/order-cancelled-publisher";
 import { natsWrapper } from "../nats-wrapper";
 import { Ticket } from "../models/ticket";
 
@@ -32,6 +32,7 @@ router.delete(
 
     new OrderCancelledPublisher(natsWrapper.client).publish({
       id: order.id,
+      version: order.version,
       ticket: {
         id: order.ticket.id,
       },
